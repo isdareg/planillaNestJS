@@ -18,11 +18,11 @@ export class EmployeesController {
 
   @Get()
   @Authorization(ValidRoles.user)
-  findAll(@Query()paginationDto:PaginationDto) {    
+  findAll(@Query() paginationDto:PaginationDto) {    
     return this.employeesService.findAll(paginationDto);
   }
 
-  @Get(':term')
+   @Get(':term')
   @Authorization(ValidRoles.user)
   findOne(@Param('term') term: string) {
     return this.employeesService.findOne(term);
